@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  app:
+    container_name: bloodDonorAdjuster
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /usr/src/app
+    ports:
+      - '3336:3336'

@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model suspenso {
+  doador String @id
+  ndias  Int
+}
+
+model doador {
+  registro String @id
+  doador   String
+  sexo     String
+}
+
+model dstpacnr {
+  nrdistrib  Int        @id
+  dtsaida    DateTime
+  paciente   String
+  prontuario String
+  dstpacat   dstpacat[]
+}
+
+model dstpacat {
+  nrdistrib      Int       @id
+  hemocomp       String
+  hemosolicitado String
+  grupoabo       String
+  fatorrh        String
+  dstpacnr       dstpacnr? @relation(fields: [nrdistrib], references: [nrdistrib])
+}
