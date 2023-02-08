@@ -8,4 +8,4 @@ services:
     volumes:
       - /usr/src/app
     ports:
-      - '3336:3336'
+      - '3000:3000'
