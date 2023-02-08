@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3336",
+    "dev": "next dev -p 3339",
     "dev:generate": "npm run generate && next dev",
     "generate": "npx prisma generate deploy",
-    "start:generate": "npm run generate && next build && next start",
+    "start:generate": "npm run generate && next build && next start -p 3339",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
